@@ -19,7 +19,10 @@ hibernate.dialect=org.hibernate.dialect.MySQLDialect
 hibernate.show_sql=true
 hibernate.hbm2ddl.auto=update
 upload.dir=c:/uploads
-Note:- The location of file is src/main/resources/database.properties
+
+This file needs to be edited first then start with building of the docker image 
+
+Note : Here I have setup everything on a corporate Proxy so necessary environmental vairables are used.
 
 How to Run
 Manual Setup
