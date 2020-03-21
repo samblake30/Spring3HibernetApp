@@ -20,6 +20,7 @@ hibernate.show_sql=true
 hibernate.hbm2ddl.auto=update
 upload.dir=c:/uploads
 
+#hi There
 Here some imp parameters to change like 
 --  database.url
 --  database.user
