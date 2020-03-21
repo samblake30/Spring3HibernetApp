@@ -20,6 +20,12 @@ hibernate.show_sql=true
 hibernate.hbm2ddl.auto=update
 upload.dir=c:/uploads
 
+Here some imp parameters to change like 
+--  database.url
+--  database.user
+--  database.password
+
+
 This file needs to be edited first then start with building of the docker image 
 
 Note : Here I have setup everything on a corporate Proxy so necessary environmental vairables are used.
