@@ -1,0 +1,49 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mavens2h
+  name: mavens2h
+  namespace: default
+spec:
+  ports:
+  - name: mavens2h
+    port: 8080
+  selector:
+    app: mavens2h
+  type: ClusterIP
+
+---
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: mavens2h
+  labels:
+    app: mavens2h
+spec:
+  selector:
+    matchLabels:
+      app: mavens2h
+  template:
+    metadata:
+      labels:
+        app: mavens2h
+    spec:
+      containers:
+      - image: samblake30/skynetmavens2h:v1
+        name: mavens2h
+        env:
+        - name: MAVENS2H_DB_HOST
+          value: mysql
+        - name: MAVENS2H_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql
+              key: mysql-password
+        ports:
+        - containerPort: 8080
+          name: mavens2h
+        resources:
+          limits:
+            cpu: 50m
